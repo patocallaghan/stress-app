@@ -38,22 +38,22 @@ SUM:                          2135          14343           2380          43870
 progress so far:
 
 * 1.13.0
-  *  [initial] Build successful - 46753ms.
-  *  [rebuild] Build successful - 18175ms.
+  *  [initial] Build successful - 47924ms.
+  *  [rebuild] Build successful - 19025ms.
 
 * 1.13.8
-  *  [initial] Build successful - 37098ms.
-  *  [rebuild] Build successful - 7171ms.
+  *  [initial] Build successful - 38359ms.
+  *  [rebuild] Build successful - 8183ms.
 
 * master
   *  [initial] Build successful - 36687ms.
-  *  [rebuild] Build successful - 5384ms.
+  *  [rebuild] Build successful - 7353ms.
 
 This current state of the stress-app is pretty good respresentation of the current state of medium -> large sized apps. It doesn't yet represent some of the mega sized apps, but that is ok for now. Lets get these numbers down.
 
 * near term target (reasonable near term)
   * [initial warm] Build successful - 10000ms. (this is for warm, cache primed builds and restarts)
-  * [rebuild] Build successful - 2500ms. (not perfect, but feels like a reasonable short term goal 50% of current)
+  * [rebuild] Build successful - 2500ms. ( feels like a reasonable short term goal 40% of current)
 
 ==== more indepth output
 
@@ -62,45 +62,47 @@ version: 1.13.0--6d06abacc7
 Deprecation warning: sassOptions should be moved to your Brocfile
 Livereload server on http://localhost:35729
 Serving on http://localhost:5511/
-Build successful - 46753ms.
+
+Build successful - 47924ms.
 
 Slowest Trees                                 | Total
 ----------------------------------------------+---------------------
-Babel                                         | 8528ms
-JSHint app- QUnit                             | 6524ms
-Babel                                         | 6522ms
-ES6: App Tree                                 | 4577ms
-SourcemapConcat                               | 2379ms
+Babel                                         | 8976ms
+Babel                                         | 6825ms
+JSHint app- QUnit                             | 6417ms
+ES6: App Tree                                 | 3962ms
+SourcemapConcat                               | 2633ms
 
 Slowest Trees (cumulative)                    | Total (avg)
 ----------------------------------------------+---------------------
-Babel (13)                                    | 16463ms (1266 ms)
-SourcemapConcat (8)                           | 11020ms (1377 ms)
-JSHint app- QUnit (1)                         | 6524ms
-ES6: App Tree (1)                             | 4577ms
+Babel (13)                                    | 17245ms (1326 ms)
+SourcemapConcat (8)                           | 11786ms (1473 ms)
+JSHint app- QUnit (1)                         | 6417ms
+ES6: App Tree (1)                             | 3962ms
 
-➜  slow-ember-cli-project git:(master) ✗ touch app/app.js
-➜  slow-ember-cli-project git:(master) ✗ file changed app.js
+➜  slow-ember-cli-project git:(master) touch app/app.js
+➜  slow-ember-cli-project git:(master) file changed app.js
 
-Build successful - 18175ms.
+Build successful - 19025ms.
 
 Slowest Trees                                 | Total
 ----------------------------------------------+---------------------
-SourcemapConcat                               | 2596ms
-SourcemapConcat                               | 2281ms
-SourcemapConcat                               | 2268ms
-SourcemapConcat                               | 2183ms
-Funnel: App JS Files                          | 2028ms
-SourcemapConcat                               | 2016ms
-SassCompiler                                  | 1754ms
-ES6: App Tree                                 | 1028ms
+SourcemapConcat                               | 2489ms
+SourcemapConcat                               | 2483ms
+SourcemapConcat                               | 2325ms
+SourcemapConcat                               | 2286ms
+Funnel: App JS Files                          | 2247ms
+SourcemapConcat                               | 2206ms
+SassCompiler                                  | 1902ms
+ES6: App Tree                                 | 1009ms
 
 Slowest Trees (cumulative)                    | Total (avg)
 ----------------------------------------------+---------------------
-SourcemapConcat (8)                           | 11397ms (1424 ms)
-Funnel: App JS Files (1)                      | 2028ms
-SassCompiler (1)                              | 1754ms
-ES6: App Tree (1)                             | 1028ms
+SourcemapConcat (8)                           | 11842ms (1480 ms)
+Funnel: App JS Files (1)                      | 2247ms
+SassCompiler (1)                              | 1902ms
+ES6: App Tree (1)                             | 1009ms
+
 ```
 ---
 
@@ -109,42 +111,44 @@ ES6: App Tree (1)                             | 1028ms
 Deprecation warning: sassOptions should be moved to your Brocfile
 Livereload server on http://localhost:49152
 Serving on http://localhost:5511/
-Build successful - 37098ms.
+Build successful - 38359ms.
 
 Slowest Trees                                 | Total
 ----------------------------------------------+---------------------
-Babel                                         | 8500ms
-JSHint app- QUnit                             | 6754ms
-Babel                                         | 6546ms
-ES6: App Tree                                 | 4058ms
-SassCompiler                                  | 3326ms
+Babel                                         | 8776ms
+Babel                                         | 6765ms
+JSHint app- QUnit                             | 6638ms
+ES6: App Tree                                 | 4096ms
+SassCompiler                                  | 3280ms
 
 Slowest Trees (cumulative)                    | Total (avg)
 ----------------------------------------------+---------------------
-Babel (13)                                    | 16496ms (1268 ms)
-JSHint app- QUnit (1)                         | 6754ms
-ES6: App Tree (1)                             | 4058ms
-SassCompiler (1)                              | 3326ms
+Babel (13)                                    | 17149ms (1319 ms)
+JSHint app- QUnit (1)                         | 6638ms
+ES6: App Tree (1)                             | 4096ms
+SassCompiler (1)                              | 3280ms
 
-➜  slow-ember-cli-project git:(master) ✗ touch app/app.js
-➜  slow-ember-cli-project git:(master) ✗ file changed app.js
+➜  slow-ember-cli-project git:(master) touch app/app.js
+➜  slow-ember-cli-project git:(master) file changed app.js
 
-Build successful - 7171ms.
+Build successful - 8183ms.
 
 Slowest Trees                                 | Total
 ----------------------------------------------+---------------------
-SassCompiler                                  | 2796ms
-Funnel: App JS Files                          | 1278ms
-BroccoliMergeTrees                            | 812ms
-Concat: App                                   | 502ms
+SassCompiler                                  | 2295ms
+Funnel: App JS Files                          | 1472ms
+ES6: App Tree                                 | 1208ms
+BroccoliMergeTrees                            | 826ms
+Concat: App                                   | 452ms
 
 Slowest Trees (cumulative)                    | Total (avg)
 ----------------------------------------------+---------------------
-SassCompiler (1)                              | 2796ms
-Funnel: App JS Files (1)                      | 1278ms
-BroccoliMergeTrees (15)                       | 851ms (56 ms)
-Concat: App (1)                               | 502ms
-Babel (13)                                    | 366ms (28 ms)
+SassCompiler (1)                              | 2295ms
+Funnel: App JS Files (1)                      | 1472ms
+ES6: App Tree (1)                             | 1208ms
+BroccoliMergeTrees (15)                       | 863ms (57 ms)
+Concat: App (1)                               | 452ms
+Babel (13)                                    | 447ms (34 ms)
 ```
 
 ----
@@ -156,42 +160,42 @@ Deprecation warning: sassOptions should be moved to your Brocfile
 Livereload server on http://localhost:49152
 Serving on http://localhost:5511/
 
-Build successful - 36687ms.
+Build successful - 37932ms.
 
 Slowest Trees                                 | Total
 ----------------------------------------------+---------------------
-Babel                                         | 8431ms
-JSHint app- QUnit                             | 6835ms
-Babel                                         | 6486ms
-ES6: App Tree                                 | 4061ms
-SassCompiler                                  | 3203ms
+Babel                                         | 8581ms
+JSHint app- QUnit                             | 6746ms
+Babel                                         | 6562ms
+SassCompiler                                  | 4261ms
+ES6: App Tree                                 | 3943ms
 
 Slowest Trees (cumulative)                    | Total (avg)
 ----------------------------------------------+---------------------
-Babel (13)                                    | 16345ms (1257 ms)
-JSHint app- QUnit (1)                         | 6835ms
-ES6: App Tree (1)                             | 4061ms
-SassCompiler (1)                              | 3203ms
+Babel (13)                                    | 16553ms (1273 ms)
+JSHint app- QUnit (1)                         | 6746ms
+SassCompiler (1)                              | 4261ms
+ES6: App Tree (1)                             | 3943ms
 
 ➜  slow-ember-cli-project git:(master) ✗ touch app/app.js
 ➜  slow-ember-cli-project git:(master) ✗ file changed app.js
 
-Build successful - 5384ms.
+Build successful - 7353ms.
 
 Slowest Trees                                 | Total
 ----------------------------------------------+---------------------
-SassCompiler                                  | 1415ms
-Funnel: App JS Files                          | 1208ms
-BroccoliMergeTrees                            | 810ms
-Concat: App                                   | 407ms
+SassCompiler                                  | 2356ms
+Funnel: App JS Files                          | 1752ms
+BroccoliMergeTrees                            | 836ms
+Concat: App                                   | 585ms
 
 Slowest Trees (cumulative)                    | Total (avg)
 ----------------------------------------------+---------------------
-SassCompiler (1)                              | 1415ms
-Funnel: App JS Files (1)                      | 1208ms
-BroccoliMergeTrees (15)                       | 845ms (56 ms)
-Concat: App (1)                               | 407ms
-Babel (13)                                    | 350ms (26 ms)
+SassCompiler (1)                              | 2356ms
+Funnel: App JS Files (1)                      | 1752ms
+BroccoliMergeTrees (15)                       | 874ms (58 ms)
+Concat: App (1)                               | 585ms
+Babel (13)                                    | 383ms (29 ms)
 ```
 
 This improvements have been mostly targeted a bower_components \w massive trees causing totally unexpected grief.
