@@ -47,13 +47,13 @@ progress so far:
 
 * master
   *  [initial] Build successful - 36687ms.
-  *  [rebuild] Build successful - 7353ms.
+  *  [rebuild] Build successful - 6374ms.
 
 This current state of the stress-app is pretty good respresentation of the current state of medium -> large sized apps. It doesn't yet represent some of the mega sized apps, but that is ok for now. Lets get these numbers down.
 
 * near term target (reasonable near term)
   * [initial warm] Build successful - 10000ms. (this is for warm, cache primed builds and restarts)
-  * [rebuild] Build successful - 2500ms. ( feels like a reasonable short term goal 40% of current)
+  * [rebuild] Build successful - 2000ms. ( feels like a reasonable short term goal 40% of current)
 
 ==== more indepth output
 
@@ -180,22 +180,22 @@ ES6: App Tree (1)                             | 3943ms
 ➜  slow-ember-cli-project git:(master) ✗ touch app/app.js
 ➜  slow-ember-cli-project git:(master) ✗ file changed app.js
 
-Build successful - 7353ms.
+Build successful - 6374ms.
 
 Slowest Trees                                 | Total
 ----------------------------------------------+---------------------
-SassCompiler                                  | 2356ms
-Funnel: App JS Files                          | 1752ms
-BroccoliMergeTrees                            | 836ms
-Concat: App                                   | 585ms
+Funnel: App JS Files                          | 1631ms
+SassCompiler                                  | 1499ms
+BroccoliMergeTrees                            | 945ms
+Concat: App                                   | 436ms
 
 Slowest Trees (cumulative)                    | Total (avg)
 ----------------------------------------------+---------------------
-SassCompiler (1)                              | 2356ms
-Funnel: App JS Files (1)                      | 1752ms
-BroccoliMergeTrees (15)                       | 874ms (58 ms)
-Concat: App (1)                               | 585ms
-Babel (13)                                    | 383ms (29 ms)
+Funnel: App JS Files (1)                      | 1631ms
+SassCompiler (1)                              | 1499ms
+BroccoliMergeTrees (15)                       | 985ms (65 ms)
+Concat: App (1)                               | 436ms
+Babel (13)                                    | 418ms (32 ms)
 ```
 
 This improvements have been mostly targeted a bower_components \w massive trees causing totally unexpected grief.
