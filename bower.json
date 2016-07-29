@@ -29,6 +29,7 @@
     "sinonjs": "~1.14.1"
   },
   "resolutions": {
-    "ember": "~2.4.1"
+    "ember": "~2.4.1",
+    "qunit-notifications": "~0.1.0"
   }
 }

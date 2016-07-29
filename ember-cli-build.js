@@ -8,7 +8,7 @@ module.exports = function(defaults) {
       theme: 'ui-darkness'
     },
     sassOptions: {
-      includePaths: ['bower_components/material-design-lite-src/src']
+      includePaths: ['bower_components/material-design-lite-src/packages']
     },
     sourcemaps: {
       enabled: false,
